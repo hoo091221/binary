@@ -26,7 +26,8 @@ h1 {
 body {
     background: url('background.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
 }
 div {
     line-height: 100px;
