@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>십진수 이진수 변환기!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <input id="value" type="number" class="input">
+    </center>
+    <center>
+        <button class="btn" onclick="two();">변환</button>
+    </center>
+    <center>
+        <div>
+            <h1 id="log"></h1>
+        </div>
+    </center>
+    <script>
+        function two() {
+            var ten = document.getElementById('value').value;
+            var num = 1;
+            var val = document.getElementById('log').value;
+            while (ten >= num) {
+                var num = num + num;
+                var binary = "";
+            }
+            while (ten != 0) {
+                if (ten >= num) {
+                    var ten = ten - num;
+                    var binary = binary + "1";
+                    var num = num / 2;
+                } else if (ten < num) {
+                    var binary = binary + "0";
+                    var num = num / 2;
+                }
+            }
+                 while (num != 0.5) {
+                     var num = num/2;
+                     var binary = binary + "0";
+                 }
+            
+            var first = binary.charAt(0);
+            if (first == 0) {
+            var binary = binary.substr(1, binary.length-1);
+            }
+            document.getElementById('log').innerHTML = binary;
+            
+        }
+    </script>
+</body>
+</html>
