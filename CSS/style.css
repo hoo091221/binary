@@ -14,6 +14,19 @@ body {
     display: none;
 }
 
+.c-div {
+    width: 90vw;
+    background: #FFF;
+    height: 75vh;
+    margin-top: calc(10vh + 2rem);
+    box-shadow: 0 1em 1em rgba(0, 200, 0, 0.5);
+    transition: all 1s ease;
+}
+
+.c-div:hover {
+    box-shadow: 0 1em 1em rgba(0, 50, 0, 0.5);
+}
+
 .h1 {
     font-family: 'Jua', sans-serif;
     font-size: 4vw;
@@ -112,4 +125,66 @@ select {
     .subtitle {
         font-size: 5vw;
     }
+}
+
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), 7px 7px 20px 0px rgba(0, 0, 0, .1), 4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+}
+
+
+/* 5 */
+
+.btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: rgb(27, 255, 0);
+    background: linear-gradient(0deg, rgba(27, 255, 0, 1) 0%, rgba(75, 251, 2, 1) 100%);
+}
+
+.btn-5:hover {
+    color: rgb(27, 255, 0);
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-5:before,
+.btn-5:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: rgb(27, 255, 0);
+    box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003, 4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+
+.btn-5:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.btn-5:hover:before,
+.btn-5:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
 }

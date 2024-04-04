@@ -2,9 +2,6 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>십진수 이진수 변환기!</title>
     <script src="./JS/binary.js"></script>
 </head>
@@ -17,7 +14,7 @@
     var bin = new URLSearchParams(location.href).get('bin');
     var num = new URLSearchParams(location.href).get('num');
 
-    if (/[^0-9]/g.test(num) == true) {
+    if (/[^0-9]/g.test(num) == false) {
         var ans = '숫자 형식이 올바르지 않습니다. 정수 형태로 입력해 주십시오.';
         log = '100';
     } else if (typeof num === null || num == '') {
@@ -25,7 +22,7 @@
         log = '200';
     }
 
-    if (bin == null || bin == 'two' && log == 'ok') {
+    if (num != null && bin == null || bin == 'two' && log == 'ok') {
         var ans = two(num);
     } else if (log == 'ok' && bin == 'four' && num == 'two') {
         var ans = four(num);

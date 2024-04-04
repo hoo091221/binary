@@ -5,19 +5,23 @@ document.addEventListener("keyup", function(event) {
 });
 
 function select() {
-    var selectList = document.getElementById("select")
+    const selectList = document.getElementById("select")
+    const val = document.getElementById('value').value;
+    const sel = selectList.options[selectList.selectedIndex].value;
+    const res = document.getElementById('log');
 
-    if (selectList.options[selectList.selectedIndex].value == "2진수로 바꾸기") {
-        two(document.getElementById('value').value);
-    } else if (selectList.options[selectList.selectedIndex].value == "4진수로 바꾸기") {
-        four(document.getElementById('value').value);
-    } else if (selectList.options[selectList.selectedIndex].value == "8진수로 바꾸기") {
-        eight(document.getElementById('value').value);
-    } else if (selectList.options[selectList.selectedIndex].value == "16진수로 바꾸기") {
-        sixteen(document.getElementById('value').value);
-    }
+    if (sel == "2진수")
+        res.innerHTML = two(val);
+    else if (sel == "4진수")
+        res.innerHTML = four(val);
+    else if (sel == "8진수")
+        res.innerHTML = eight(val);
+    else if (sel == "16진수")
+        res.innerHTML = sixteen(val);
+
 }
 
+// 십진수 -> 이진수
 function two(ten) {
     var num = 1;
     var val = document.getElementById('log').value;
@@ -48,8 +52,7 @@ function two(ten) {
 
 }
 
-
-
+// 십진수 -> 4진수
 function four(ten) {
     var num = 1;
     var val = document.getElementById('log').value;
@@ -81,7 +84,6 @@ function four(ten) {
     var binary = binary.toString();
     var digit = binary.length;
     var num;
-    console.log(digit + " " + num);
     var four = " ";
     if (digit % 2 == 1) {
         var binary = "0" + binary;
@@ -104,13 +106,11 @@ function four(ten) {
             }
             var num = num + 2;
         }
-        console.log(four);
     }
-    console.log(four);
     return four;
 }
 
-
+// 십진수 -> 8진수
 function eight(ten) {
     var num = 1;
     while (ten >= num) {
@@ -141,7 +141,6 @@ function eight(ten) {
     var binary = binary.toString();
     var digit = binary.length;
     var num = 0;
-    console.log(digit + " " + num);
     if (digit % 3 != 0) {
         var binary = "0" + binary;
         var digit = digit + 1;
@@ -183,8 +182,7 @@ function eight(ten) {
     return eight;
 }
 
-
-
+// 십진수 -> 16진수
 function sixteen(ten) {
     var num = 1;
     while (ten >= num) {
@@ -279,7 +277,6 @@ function sixteen(ten) {
             var eight = eight + "F";
         }
         var num = num + 4;
-        console.log(eight);
     }
     return eight;
 }
